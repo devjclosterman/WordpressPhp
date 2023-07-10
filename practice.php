@@ -157,5 +157,96 @@ endif;
 
     <!-- Conditional tags in wordpress, will return
      true of false based on condtion or state -->
+<?php
+     if ( is_user_logged_in() ):
+        echo 'Welcome, registered user!';
+     else:
+        echo 'Welcome, visitor!';
+     endif;
+?>
 
-     
+<!-- Loops  -->
+<!-- Execute code until some condition becomes false, in Wordpress 
+Loops are mostly used to process arrays -->
+
+<!-- syntax for while loop -->
+<?php
+while ( condition is true ) {
+
+    /* Code to execute.Should include to 
+     eventually make condition false */
+
+}
+
+$items = array('1', '2', '3');
+
+foreach( $items as $item ) {
+    //Do something with the next item in the Array
+}
+
+?>
+
+<?php 
+ $i = 1;
+ while ( $i <= 10 ) {
+  //  echo "$i \n";
+    $i = $i + 1; // $i++
+ }
+
+ $colors = array('best' => 'red', 'better' => 'blue', 
+ 'good' => 'green', 'ok' => 'yellow' );
+ $i = 0;
+ while( $i < sizeof( $colors ) ) {
+   // echo $colors[$i] . "\n";
+    i++;
+};
+
+foreach ( $colors as $rank => $color ) {
+    echo "$color is $rank \n";
+}
+?>
+
+
+<!-- an extremely simple index.php file and what it would look like-->
+<?php
+get_header();
+
+if( have_posts() ) :
+    while ( have_posts() ) : the_post();
+    the_content();
+endwhile;
+else : 
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+endif;
+
+get_sidebar();
+get_footer();
+?>
+
+<?php 
+// Teenage mutant ninja turtles
+$tmnt = array(
+
+    'Leo' => array( 'bandana' => 'blue', 'weapons' => 'swords', 
+    'role' => 'leader' ),
+    'Raph' => array( 'bandana' => 'red', 'weapons' => 'sighs',
+    'role' => 'hot shot' ),
+    'Mikey' => array( 'bandana' => 'orange', 'weapons' => 'nunchucks',
+    'role' => 'fun one' ),
+    'Don' => array( 'bandana' => 'purple', 'weapons' => 'staff',
+    'role' => 'nerd' ),
+);
+
+foreach( $tmnt as $turtle => $atts ) {
+    echo "<p><b>$turtle: </br> ";
+    $atts_list = '';
+ foreach( $atts as $attr ) {
+    $attr_list .= "$attr, ";
+    }
+    $atts_list = trim( $atts_list, ', ' );
+    echo $atts_list;
+    echo '</p> ';
+} 
+
+
+
