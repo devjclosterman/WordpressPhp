@@ -238,15 +238,17 @@ $tmnt = array(
 );
 
 foreach( $tmnt as $turtle => $atts ) {
-    echo "<p><b>$turtle: </br> ";
-    $atts_list = '';
- foreach( $atts as $attr ) {
-    $attr_list .= "$attr, ";
+    echo "<h4><b>$turtle: </h4> ";
+    echo '<ul>';
+ foreach( $atts as $label => $attr ) {
+    echo "<li>$label: $attr</li>";
     }
-    $atts_list = trim( $atts_list, ', ' );
-    echo $atts_list;
-    echo '</p> ';
+    echo '</ul>';
 } 
+
+//Moving on to functions 
+// Reusable snippets of code that can be called multiple times
+
 
 
 
