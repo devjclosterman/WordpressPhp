@@ -246,5 +246,9 @@ foreach( $tmnt as $turtle => $atts ) {
     echo '</ul>';
 } 
 
+//Moving on to functions 
+// Reusable snippets of code that can be called multiple times
+
+
 
 
