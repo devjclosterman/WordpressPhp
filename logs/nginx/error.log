@@ -1,0 +1,1 @@
+2023/07/09 17:47:43 [error] 27220#27068: *1 directory index of "C:/Users/Jason/Local Sites/no-wordpress/app/public/" is forbidden, client: 127.0.0.1, server: , request: "GET / HTTP/1.0", host: "no-wordpress.local"
